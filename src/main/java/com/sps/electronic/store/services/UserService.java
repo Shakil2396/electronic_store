@@ -1,9 +1,11 @@
 package com.sps.electronic.store.services;
 
+import com.sps.electronic.store.dtos.PageableResponse;
 import com.sps.electronic.store.dtos.UserDto;
 import com.sps.electronic.store.enitities.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
 
@@ -17,7 +19,7 @@ public interface UserService {
     void deleteUser(String userId);
 
     //get all user
-    List<UserDto> getAllUsers();
+    PageableResponse<UserDto> getAllUsers(int pageNumber, int pageSize, String sortBy, String sortDir);
 
     //get single user by id
     UserDto getUserById(String userId);
@@ -29,4 +31,6 @@ public interface UserService {
     List<UserDto> searchUser(String keyword);
 
     //other user specific features
+
+    Optional<User> findUserByEmailOptional(String email);
 }

@@ -14,4 +14,6 @@ public interface UserRepository extends JpaRepository<User, String> {
 //    Optional<User> findByEmailAndPassword(String email, String password); //both match then object fetch
 
     List<User> findByNameContaining(String keywords);
+
+    boolean existsByEmail(String email);
 }
