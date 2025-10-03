@@ -13,7 +13,7 @@
 # #now with the help of above things we build image
 
 # Stage 1: Build the Spring Boot JAR
-FROM maven:3.9.6-eclipse-temurin-18 AS builder
+FROM maven:3.9.6-eclipse-temurin-18-focal AS builder
 WORKDIR /app
 
 #Copy pom.xml and source code
